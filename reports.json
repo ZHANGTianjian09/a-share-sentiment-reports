@@ -1,95 +1,105 @@
 {
-  "generated_at": "2026-08-09T21:57:02+08:00",
+  "generated_at": "2026-08-09T22:56:38+08:00",
   "reports": [
     {
       "id": "close-2026-08-07-preclose-v1",
       "category": "close",
       "report_date": "2026-08-07",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:38+08:00",
       "title": "2026-08-07 收盘前报告",
       "revision": 1,
-      "file": "reports/close/2026-08-07-preclose.pdf"
+      "file": "reports/close/2026-08-07-preclose.pdf",
+      "headline": "恐慌快速消退，情绪升至近五日高位"
     },
     {
       "id": "preopen-2026-08-07-preopen-v1",
       "category": "preopen",
       "report_date": "2026-08-07",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:36+08:00",
       "title": "2026-08-07 盘前报告",
       "revision": 1,
-      "file": "reports/preopen/2026-08-07-preopen.pdf"
+      "file": "reports/preopen/2026-08-07-preopen.pdf",
+      "headline": "恐慌快速升温，情绪降至近五日低位"
     },
     {
       "id": "close-2026-08-06-preclose-v1",
       "category": "close",
       "report_date": "2026-08-06",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:35+08:00",
       "title": "2026-08-06 收盘前报告",
       "revision": 1,
-      "file": "reports/close/2026-08-06-preclose.pdf"
+      "file": "reports/close/2026-08-06-preclose.pdf",
+      "headline": "恐慌程度中性，整体情绪偏空"
     },
     {
       "id": "preopen-2026-08-06-preopen-v1",
       "category": "preopen",
       "report_date": "2026-08-06",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:31+08:00",
       "title": "2026-08-06 盘前报告",
       "revision": 1,
-      "file": "reports/preopen/2026-08-06-preopen.pdf"
+      "file": "reports/preopen/2026-08-06-preopen.pdf",
+      "headline": "市场评论整体偏空"
     },
     {
       "id": "close-2026-08-05-preclose-v1",
       "category": "close",
       "report_date": "2026-08-05",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:24+08:00",
       "title": "2026-08-05 收盘前报告",
       "revision": 1,
-      "file": "reports/close/2026-08-05-preclose.pdf"
+      "file": "reports/close/2026-08-05-preclose.pdf",
+      "headline": "恐慌程度回落，整体情绪中性"
     },
     {
       "id": "preopen-2026-08-05-preopen-v1",
       "category": "preopen",
       "report_date": "2026-08-05",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:21+08:00",
       "title": "2026-08-05 盘前报告",
       "revision": 1,
-      "file": "reports/preopen/2026-08-05-preopen.pdf"
+      "file": "reports/preopen/2026-08-05-preopen.pdf",
+      "headline": "恐慌程度小幅回落，整体情绪中性"
     },
     {
       "id": "close-2026-08-04-preclose-v1",
       "category": "close",
       "report_date": "2026-08-04",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:19+08:00",
       "title": "2026-08-04 收盘前报告",
       "revision": 1,
-      "file": "reports/close/2026-08-04-preclose.pdf"
+      "file": "reports/close/2026-08-04-preclose.pdf",
+      "headline": "恐慌程度回落，整体情绪中性"
     },
     {
       "id": "preopen-2026-08-04-preopen-v1",
       "category": "preopen",
       "report_date": "2026-08-04",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:16+08:00",
       "title": "2026-08-04 盘前报告",
       "revision": 1,
-      "file": "reports/preopen/2026-08-04-preopen.pdf"
+      "file": "reports/preopen/2026-08-04-preopen.pdf",
+      "headline": "恐慌程度微升，整体情绪中性"
     },
     {
       "id": "close-2026-08-03-preclose-v1",
       "category": "close",
       "report_date": "2026-08-03",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:14+08:00",
       "title": "2026-08-03 收盘前报告",
       "revision": 1,
-      "file": "reports/close/2026-08-03-preclose.pdf"
+      "file": "reports/close/2026-08-03-preclose.pdf",
+      "headline": "恐慌程度加深，整体情绪偏空"
     },
     {
       "id": "preopen-2026-08-03-preopen-v1",
       "category": "preopen",
       "report_date": "2026-08-03",
-      "published_at": "2026-08-09T21:57:02+08:00",
+      "published_at": "2026-08-09T22:56:11+08:00",
       "title": "2026-08-03 盘前报告",
       "revision": 1,
-      "file": "reports/preopen/2026-08-03-preopen.pdf"
+      "file": "reports/preopen/2026-08-03-preopen.pdf",
+      "headline": "整体情绪中性，恐慌程度较低"
     }
   ]
 }

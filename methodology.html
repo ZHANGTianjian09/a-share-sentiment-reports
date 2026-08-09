@@ -60,7 +60,7 @@
         <tr><td>sentiment</td><td>bullish / neutral / bearish</td><td>评论者对未来方向的判断：看多、中性或看空。提问、事实陈述和方向不明通常为 neutral。</td></tr>
         <tr><td>fear_greed_score</td><td>-1 / 0 / 1</td><td>-1 恐慌；0 没有明显情绪强度；1 贪婪。普通看跌不自动等于恐慌，普通看涨也不自动等于贪婪。</td></tr>
         <tr><td>style_score</td><td>-1 / 0 / 1</td><td>-1 价值；0 无明确风格；1 成长。看涨不自动等于成长，看跌不自动等于价值。</td></tr>
-        <tr><td>stock_mentions</td><td>名称或代码数组</td><td>评论中明确出现的个股名称、简称或股票代码；提及不代表推荐或看多。</td></tr>
+        <tr><td>stock_mentions</td><td>市场实体数组</td><td>评论中明确出现的公司、个股、行业或市场主题。字段名为历史兼容名称；提及不代表推荐或看多。</td></tr>
         <tr><td>sarcasm</td><td>true / false</td><td>是否存在较明确的反讽、阴阳、玩笑式反话或反向表达。</td></tr>
         <tr><td>reason_short</td><td>简短文字</td><td>供人工抽查使用的判定依据，不参与分数计算，也不在公开报告展示。</td></tr>
       </tbody></table></div>
@@ -102,11 +102,11 @@
     </section>
 
     <section class="section" id="creators">
-      <p class="kicker">07 · CREATORS &amp; STOCKS</p><h2>博主评论一览与股票 Top 5</h2>
+      <p class="kicker">07 · CREATORS &amp; MENTIONS</p><h2>博主评论一览与提及 Top 5</h2>
       <h3>为什么只展示五位博主</h3>
       <p>当前系统覆盖 12 位博主。PDF 按本期有效市场评论数从高到低展示前五位，剩余博主合并为“其他博主（7位）”，从而在一页内保持可读性。</p>
       <p>“其他博主”的分数不是简单平均七位博主的平均值，而是把这些博主的底层有效评论合并后重新计算。这样不同样本量不会被错误地赋予相同权重。表格中的“较前次”用于描述与可比较快照之间最明显的变化。</p>
-      <h3>股票提及 Top 5</h3>
+      <h3>提及 Top 5</h3>
       <p>DeepSeek 从每条评论中提取明确出现的股票名称、简称或代码；同一条评论内的重复名称只计一次，再按所有评论的命中次数排序。它反映“讨论次数”，不表示看多、推荐、买入量或资金流向。</p>
     </section>
 
@@ -118,7 +118,7 @@
         <div class="report-row"><strong>③ 样本概况</strong><p>检查博主数、视频数、一级评论数、市场相关率和分析成功率。样本明显变少时，指标稳定性也会下降。</p></div>
         <div class="report-row"><strong>④ 三项指标</strong><p>同时看文字方向、具体分数和过去五日折线。单个时点回答“现在是什么状态”，折线回答“状态正在怎样变化”。</p></div>
         <div class="report-row"><strong>⑤ 博主评论一览</strong><p>判断总体结果是否由少数高评论量博主推动，以及不同博主之间是否存在明显分歧。</p></div>
-        <div class="report-row"><strong>⑥ 股票提及</strong><p>用于观察讨论焦点，不应理解成选股清单。</p></div>
+        <div class="report-row"><strong>⑥ 高频提及</strong><p>可能包含公司、个股、行业或主题，用于观察讨论焦点，不应理解成选股清单。</p></div>
       </div>
       <h3>市场情绪速览的生成边界</h3>
       <p>一句话综合评价不读取新闻，也不重新阅读全部原始评论。它接收当前指标、五日变化、样本量和关注度信息，只选择最值得注意的一项。例如：<span class="tag">恐慌快速升温，处于近五日高位</span><span class="tag">多空分歧明显，整体情绪中性</span><span class="tag">市场话题聚焦度较低</span></p>
