@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-08T12:16:11+08:00",
+  "reports": [
+    {
+      "id": "preopen-2026-08-07-preopen-v1",
+      "category": "preopen",
+      "report_date": "2026-08-07",
+      "published_at": "2026-08-08T12:16:11+08:00",
+      "title": "2026-08-07 盘前报告",
+      "revision": 1,
+      "file": "reports/preopen/2026-08-07-preopen.pdf"
+    },
+    {
+      "id": "close-2026-08-07-preclose-v1",
+      "category": "close",
+      "report_date": "2026-08-07",
+      "published_at": "2026-08-08T12:16:11+08:00",
+      "title": "2026-08-07 收盘前报告",
+      "revision": 1,
+      "file": "reports/close/2026-08-07-preclose.pdf"
+    }
+  ]
+}
