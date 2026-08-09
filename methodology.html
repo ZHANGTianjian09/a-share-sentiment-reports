@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A股评论区情绪报告的数据来源、指标计算与阅读方法">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>数据与指标说明｜财经情绪观察</title>
+  <style>
+    :root{--paper:#f6f3ec;--surface:#fffdf8;--ink:#172239;--muted:#626b7d;--line:#d9d6ce;--blue:#2d66d8;--blue-soft:#e9f0ff;--red:#d95855;--purple:#7365d8;--green:#2e9a66}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 9% 2%,rgba(45,102,216,.09),transparent 28rem),var(--paper);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--blue);text-underline-offset:3px}.page,.topbar,footer{width:min(940px,calc(100% - 40px));margin:0 auto}.topbar{display:flex;align-items:center;justify-content:space-between;padding:28px 0 0}.back{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-size:14px;font-weight:700;text-decoration:none}.back:hover,.back:focus-visible{color:var(--blue);outline:none}.version{color:var(--muted);font-size:12px}.hero{padding:72px 0 58px}.eyebrow{margin:0 0 16px;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.18em}.hero h1{max-width:760px;margin:0;font-family:"Songti SC","STSong",serif;font-size:clamp(42px,7vw,66px);letter-spacing:-.045em;line-height:1.08}.lead{max-width:760px;margin:25px 0 0;color:#4e586c;font-size:18px;line-height:1.9}.notice{margin-top:28px;padding:18px 21px;border-left:4px solid var(--blue);border-radius:0 12px 12px 0;background:var(--blue-soft);font-size:14px;line-height:1.8}.toc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 58px;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,253,248,.72)}.toc a{padding:9px 11px;border-radius:8px;color:var(--ink);font-size:13px;text-decoration:none}.toc a:hover,.toc a:focus-visible{background:var(--blue-soft);color:var(--blue);outline:none}.section{padding:48px 0;border-top:1px solid var(--line)}.kicker{margin:0 0 11px;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.16em}.section h2{margin:0 0 20px;font-size:30px;letter-spacing:-.035em}.section h3{margin:31px 0 12px;font-size:19px}.section p,.section li{color:#414b60;font-size:15px;line-height:1.9}.section ul,.section ol{padding-left:1.3em}.section strong{color:var(--ink)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:23px 0}.card{padding:21px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.card h3{margin:0 0 9px;font-size:17px}.card p{margin:0;font-size:14px}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:24px 0}.flow-step{position:relative;padding:18px 11px;border-radius:12px;background:var(--surface);box-shadow:0 6px 20px rgba(23,34,57,.04);font-size:13px;font-weight:700;text-align:center}.flow-step:not(:last-child)::after{position:absolute;right:-8px;top:50%;z-index:2;color:var(--blue);content:"→";transform:translateY(-50%)}.formula{margin:18px 0;padding:18px 20px;border-radius:12px;background:var(--ink);color:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.8}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.metric{padding:19px;border-radius:14px;background:var(--surface);border-top:4px solid var(--blue)}.metric.fear{border-color:var(--red)}.metric.style{border-color:var(--purple)}.metric h3{margin:0 0 13px}.scale{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:13px}.scale span{padding:8px 4px;border-radius:6px;background:var(--paper);font-size:12px;text-align:center}.table-wrap{overflow-x:auto;margin:20px 0}table{width:100%;border-collapse:collapse;background:var(--surface);font-size:13px}th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--ink);color:#fff;font-weight:700}tr:last-child td{border-bottom:0}.report-map{display:grid;gap:12px;margin:24px 0}.report-row{display:grid;grid-template-columns:180px 1fr;gap:22px;padding:19px 0;border-bottom:1px solid var(--line)}.report-row strong{font-size:15px}.report-row p{margin:0;font-size:14px}.tag{display:inline-block;margin:0 5px 5px 0;padding:4px 8px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:700}.callout{margin:22px 0;padding:19px 21px;border:1px solid var(--line);border-radius:13px;background:var(--surface)}.callout p{margin:0}.small{color:var(--muted)!important;font-size:13px!important}footer{padding:30px 0 44px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.8}@media(max-width:720px){.page,.topbar,footer{width:min(100% - 28px,940px)}.hero{padding:52px 0 44px}.lead{font-size:16px}.toc,.grid,.metric-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow-step:not(:last-child)::after{right:50%;top:auto;bottom:-13px;transform:translateX(50%) rotate(90deg)}.report-row{grid-template-columns:1fr;gap:7px}.section{padding:38px 0}.section h2{font-size:26px}}
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="页面导航"><a class="back" href="index.html">← 返回报告归档</a><span class="version">方法口径 v1.0</span></nav>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">DATA &amp; METHODOLOGY</p>
+      <h1>数据与指标说明</h1>
+      <p class="lead">这份说明解释每一条数据从哪里来、如何进入报告，以及“看多 / 看空”“恐慌 / 贪婪”“成长 / 价值”等指标应当怎样理解。</p>
+      <div class="notice"><strong>一句话概括：</strong>系统把指定财经博主视频下可公开获取的一级评论保存成时间快照，再由 DeepSeek 将评论转换为结构化标签，最后由 Python 汇总并生成报告。报告衡量的是<strong>这些评论区样本所反映的情绪</strong>，不是全体投资者情绪，也不是行情预测。</div>
+    </header>
+
+    <nav class="toc" aria-label="本页目录">
+      <a href="#pipeline">1. 完整数据链路</a><a href="#windows">2. 时间窗口</a><a href="#collection">3. 采集口径</a>
+      <a href="#labels">4. 单条评论标签</a><a href="#metrics">5. 三项核心指标</a><a href="#trends">6. 五日趋势</a>
+      <a href="#creators">7. 博主与个股</a><a href="#reading">8. 如何阅读报告</a><a href="#quality">9. 局限与质量</a>
+    </nav>
+
+    <section class="section" id="pipeline">
+      <p class="kicker">01 · PIPELINE</p><h2>完整数据链路</h2>
+      <div class="flow"><div class="flow-step">指定博主与视频</div><div class="flow-step">MediaCrawler 采集</div><div class="flow-step">原始快照落盘</div><div class="flow-step">DeepSeek 结构化</div><div class="flow-step">Python 汇总成 PDF</div></div>
+      <p>采集、模型分析和报告生成是三个相互独立的阶段。原始评论不会因为模型分析或报告更新而被改写；DeepSeek 的原始响应、校验后的结构化结果和最终 PDF 也分别保存。这样可以在不重新访问抖音的情况下重新分析历史数据，或在指标口径变化后重新生成报告。</p>
+      <div class="grid"><article class="card"><h3>DeepSeek 做什么</h3><p>理解中文评论、俚语、反讽和上下文，把文本转换成固定 JSON 字段。当前使用官方 API 的 V4 Flash 非思考模式。</p></article><article class="card"><h3>Python 做什么</h3><p>确定时间窗口、去重、校验字段、计算比例与平均分、绘制折线图、排序博主并生成 PDF。Python 不自行“理解”评论语义。</p></article></div>
+    </section>
+
+    <section class="section" id="windows">
+      <p class="kicker">02 · TIME WINDOWS</p><h2>盘前与收盘前是两份独立快照</h2>
+      <div class="grid"><article class="card"><h3>盘前报告</h3><p><strong>上一交易日 14:00 → 当日 08:30</strong><br>反映隔夜至盘前的新增公开评论。</p></article><article class="card"><h3>收盘前报告</h3><p><strong>当日 08:30 → 当日 14:00</strong><br>反映盘前之后至收盘前的新增公开评论。</p></article></div>
+      <p>两个区间首尾衔接、互不重叠。收盘前报告可以成为网站上的最新视图，但不会覆盖盘前快照。所有历史快照均保留，以便未来回测并减少前视偏差。</p>
+      <div class="callout"><p><strong>历史回填与实时快照不同：</strong>实时快照是在截止时刻保存当时可获取的数据；历史回填则根据后来采集到的评论时间戳重建过去区间。历史报告会明确标注“历史回填重建”，不能把它当成当时真实执行的实时采集。</p></div>
+    </section>
+
+    <section class="section" id="collection">
+      <p class="kicker">03 · COLLECTION</p><h2>采集了什么，没有采集什么</h2>
+      <ul>
+        <li><strong>对象：</strong>配置中指定的 12 位财经博主，以及信息窗口涉及的视频。</li>
+        <li><strong>评论层级：</strong>只保存公开可获取的一级评论，不进入任何二级回复或嵌套讨论。</li>
+        <li><strong>增量规则：</strong>新区间发布的视频获取区间内可取评论；此前已经跟踪的视频只补充尚未保存的新评论，避免重复。</li>
+        <li><strong>唯一标识：</strong>使用 comment_id 去重；同一条评论不会因为多次回访而重复进入统计。</li>
+        <li><strong>视频上下文：</strong>可用时向模型提供视频标题与平台字幕，帮助理解“他又奶了”“反向指标”等省略语；字幕只作为背景，不能被当成评论者观点。</li>
+        <li><strong>隐私：</strong>公开报告不展示评论者昵称或用户 ID。原始数据中的昵称会脱敏，用户标识只保留不可逆散列用于去重和审计。</li>
+      </ul>
+      <p>“全量”指的是在当次快照中，程序把平台接口当时能够返回的公开一级评论持续分页取完；它不等于抖音历史上存在过的全部评论。删除、折叠、排序、登录状态和平台返回限制都可能使页面显示数与实际可取数不同。</p>
+    </section>
+
+    <section class="section" id="labels">
+      <p class="kicker">04 · COMMENT LABELS</p><h2>每条评论交给 DeepSeek 返回什么</h2>
+      <div class="table-wrap"><table><thead><tr><th>字段</th><th>允许值</th><th>含义</th></tr></thead><tbody>
+        <tr><td>market_related</td><td>true / false</td><td>评论是否确实涉及股票、基金、指数、交易、市场情绪或相关投资话题。</td></tr>
+        <tr><td>sentiment</td><td>bullish / neutral / bearish</td><td>评论者对未来方向的判断：看多、中性或看空。提问、事实陈述和方向不明通常为 neutral。</td></tr>
+        <tr><td>fear_greed_score</td><td>-1 / 0 / 1</td><td>-1 恐慌；0 没有明显情绪强度；1 贪婪。普通看跌不自动等于恐慌，普通看涨也不自动等于贪婪。</td></tr>
+        <tr><td>style_score</td><td>-1 / 0 / 1</td><td>-1 价值；0 无明确风格；1 成长。看涨不自动等于成长，看跌不自动等于价值。</td></tr>
+        <tr><td>stock_mentions</td><td>名称或代码数组</td><td>评论中明确出现的个股名称、简称或股票代码；提及不代表推荐或看多。</td></tr>
+        <tr><td>sarcasm</td><td>true / false</td><td>是否存在较明确的反讽、阴阳、玩笑式反话或反向表达。</td></tr>
+        <tr><td>reason_short</td><td>简短文字</td><td>供人工抽查使用的判定依据，不参与分数计算，也不在公开报告展示。</td></tr>
+      </tbody></table></div>
+      <h3>几个容易混淆的例子</h3>
+      <div class="table-wrap"><table><thead><tr><th>评论</th><th>方向</th><th>恐慌 / 贪婪</th><th>成长 / 价值</th></tr></thead><tbody>
+        <tr><td>可能还要跌，暂时观望</td><td>看空</td><td>0，中性</td><td>0，无倾向</td></tr>
+        <tr><td>彻底完了，明天全部割肉</td><td>看空</td><td>-1，恐慌</td><td>0，无倾向</td></tr>
+        <tr><td>牛市来了，闭眼满仓梭哈</td><td>看多</td><td>1，贪婪</td><td>0，无倾向</td></tr>
+        <tr><td>长期看好，等回调再买</td><td>看多</td><td>0，中性</td><td>0，无倾向</td></tr>
+        <tr><td>AI 和半导体继续看好</td><td>看多</td><td>0，中性</td><td>1，成长</td></tr>
+        <tr><td>还是低估值高股息更稳</td><td>看多</td><td>0，中性</td><td>-1，价值</td></tr>
+      </tbody></table></div>
+      <p>非市场评论统一返回 neutral、fear_greed_score=0、style_score=0，且不提取股票。模型输出必须通过本地严格校验：字段不能多、不能少，分数只能是 -1/0/1，评论 ID 必须与输入一一对应。校验失败的批次不会写入正式结果。</p>
+    </section>
+
+    <section class="section" id="metrics">
+      <p class="kicker">05 · CORE METRICS</p><h2>三项核心指标怎样计算</h2>
+      <p>三个总体指标都以 <strong>market_related=true 的有效市场评论</strong>为基础。每条评论先映射成 -1、0 或 1，再计算算术平均值，因此最终结果自然落在 -1 到 1 之间。</p>
+      <div class="metric-grid">
+        <article class="metric"><h3>看多 / 看空</h3><p>bullish=1，neutral=0，bearish=-1。</p><div class="scale"><span>-1 看空</span><span>0 中性</span><span>1 看多</span></div></article>
+        <article class="metric fear"><h3>恐慌 / 贪婪</h3><p>直接使用 fear_greed_score。</p><div class="scale"><span>-1 恐慌</span><span>0 中性</span><span>1 贪婪</span></div></article>
+        <article class="metric style"><h3>成长 / 价值</h3><p>直接使用 style_score。</p><div class="scale"><span>-1 价值</span><span>0 无倾向</span><span>1 成长</span></div></article>
+      </div>
+      <div class="formula">总体分数 = 有效市场评论分数之和 ÷ 有效市场评论数量</div>
+      <p>方向分也等价于“看多评论占比 − 看空评论占比”。例如，100 条有效市场评论中有 40 条看多、35 条中性、25 条看空，则方向分为 (40−25)÷100=+0.15。</p>
+      <p>报告中的“偏多、偏空、恐慌、贪婪、成长、价值”等文字是为了便于阅读而生成的区间标签；旁边的小数才是用于时间比较的连续结果。接近 0 表示没有明显总体倾向，并不意味着所有评论都中性，也可能意味着正负意见相互抵消。</p>
+    </section>
+
+    <section class="section" id="trends">
+      <p class="kicker">06 · FIVE-DAY TRENDS</p><h2>五日折线图为什么有十个点</h2>
+      <p>每个交易日有盘前和收盘前两个独立快照，因此完整五个交易日最多包含十个点。横轴直接标注起止日期，例如“8月3日盘前”和“8月7日收盘前”。</p>
+      <ul>
+        <li>缺失快照会让折线断开，不会用 0 自动补齐。</li>
+        <li>三张图分别展示看多/看空、恐慌/贪婪、成长/价值。</li>
+        <li>纵轴根据各自五日真实数据动态缩放，让变化可见；图中同时标出真实上下界。</li>
+        <li>动态缩放设置了最小跨度，避免极小的模型噪声被视觉上夸大成剧烈变化。</li>
+      </ul>
+      <div class="callout"><p><strong>阅读时先看刻度：</strong>两条形状相似的曲线，如果纵轴范围不同，实际变化幅度可能完全不同。不能只凭折线的陡峭程度下结论。</p></div>
+    </section>
+
+    <section class="section" id="creators">
+      <p class="kicker">07 · CREATORS &amp; STOCKS</p><h2>博主评论一览与股票 Top 5</h2>
+      <h3>为什么只展示五位博主</h3>
+      <p>当前系统覆盖 12 位博主。PDF 按本期有效市场评论数从高到低展示前五位，剩余博主合并为“其他博主（7位）”，从而在一页内保持可读性。</p>
+      <p>“其他博主”的分数不是简单平均七位博主的平均值，而是把这些博主的底层有效评论合并后重新计算。这样不同样本量不会被错误地赋予相同权重。表格中的“较前次”用于描述与可比较快照之间最明显的变化。</p>
+      <h3>股票提及 Top 5</h3>
+      <p>DeepSeek 从每条评论中提取明确出现的股票名称、简称或代码；同一条评论内的重复名称只计一次，再按所有评论的命中次数排序。它反映“讨论次数”，不表示看多、推荐、买入量或资金流向。</p>
+    </section>
+
+    <section class="section" id="reading">
+      <p class="kicker">08 · HOW TO READ</p><h2>一页报告建议这样读</h2>
+      <div class="report-map">
+        <div class="report-row"><strong>① 标题与数据窗口</strong><p>先确认盘前还是收盘前、截止时间和是否属于历史回填。不同窗口不能混为同一时点。</p></div>
+        <div class="report-row"><strong>② 市场情绪速览</strong><p>DeepSeek 只接收 Python 已计算的聚合指标，从中选择最突出的一个状态，用 10–25 个中文字概括。它不得虚构原因、新闻、预测或投资建议。</p></div>
+        <div class="report-row"><strong>③ 样本概况</strong><p>检查博主数、视频数、一级评论数、市场相关率和分析成功率。样本明显变少时，指标稳定性也会下降。</p></div>
+        <div class="report-row"><strong>④ 三项指标</strong><p>同时看文字方向、具体分数和过去五日折线。单个时点回答“现在是什么状态”，折线回答“状态正在怎样变化”。</p></div>
+        <div class="report-row"><strong>⑤ 博主评论一览</strong><p>判断总体结果是否由少数高评论量博主推动，以及不同博主之间是否存在明显分歧。</p></div>
+        <div class="report-row"><strong>⑥ 股票提及</strong><p>用于观察讨论焦点，不应理解成选股清单。</p></div>
+      </div>
+      <h3>市场情绪速览的生成边界</h3>
+      <p>一句话综合评价不读取新闻，也不重新阅读全部原始评论。它接收当前指标、五日变化、样本量和关注度信息，只选择最值得注意的一项。例如：<span class="tag">恐慌快速升温，处于近五日高位</span><span class="tag">多空分歧明显，整体情绪中性</span><span class="tag">市场话题聚焦度较低</span></p>
+      <p>“市场相关率低”只能说明评论区对市场话题的聚焦度较低；只有有效市场评论数量也显著低于过去五个同类型快照时，才可以描述为“市场讨论关注度较低”。盘前只和过去盘前比较，收盘前只和过去收盘前比较。</p>
+    </section>
+
+    <section class="section" id="quality">
+      <p class="kicker">09 · QUALITY &amp; LIMITS</p><h2>数据质量、偏差与使用边界</h2>
+      <div class="grid">
+        <article class="card"><h3>平台可获取性</h3><p>评论接口可能因登录、验证码、平台限制、删除或折叠而返回不完整数据。程序不会绕过访问控制，遇到限制会暂停并保留断点。</p></article>
+        <article class="card"><h3>博主受众偏差</h3><p>评论区用户不是随机抽样的全体投资者，不同博主的受众结构和视频主题会显著影响情绪分布。</p></article>
+        <article class="card"><h3>模型分类误差</h3><p>中文俚语、反讽、上下文缺失和股票简称可能导致误判。系统保留 reason_short 和原始响应，用于人工抽查与重新分析。</p></article>
+        <article class="card"><h3>评论量不等于人数</h3><p>一个人可以发表多条评论。报告按评论计权，不代表独立投资者人数，也不代表资金规模。</p></article>
+      </div>
+      <p>报告是研究型情绪观察工具，不构成证券评级、收益预测或投资建议。任何分数都应与样本量、数据窗口、博主分布和历史趋势一起阅读，不应作为单独的交易信号。</p>
+      <p class="small">当前方法版本：v1.0。若未来字段、阈值或时间边界发生变化，报告与本页面应同步记录版本，避免把不同口径的结果直接比较。</p>
+    </section>
+  </main>
+  <footer><p>本说明对应“每日市场情绪报告”的当前原型口径。</p><p><a href="index.html">返回报告归档</a> · 仅供研究，不构成投资建议。</p></footer>
+</body>
+</html>
