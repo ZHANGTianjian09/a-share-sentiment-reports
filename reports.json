@@ -1,14 +1,95 @@
 {
-  "generated_at": "2026-08-09T21:47:18+08:00",
+  "generated_at": "2026-08-09T21:57:02+08:00",
   "reports": [
     {
-      "id": "preopen-2026-08-07-preopen-v2",
+      "id": "close-2026-08-07-preclose-v1",
+      "category": "close",
+      "report_date": "2026-08-07",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-07 收盘前报告",
+      "revision": 1,
+      "file": "reports/close/2026-08-07-preclose.pdf"
+    },
+    {
+      "id": "preopen-2026-08-07-preopen-v1",
       "category": "preopen",
       "report_date": "2026-08-07",
-      "published_at": "2026-08-09T21:47:18+08:00",
+      "published_at": "2026-08-09T21:57:02+08:00",
       "title": "2026-08-07 盘前报告",
-      "revision": 2,
+      "revision": 1,
       "file": "reports/preopen/2026-08-07-preopen.pdf"
+    },
+    {
+      "id": "close-2026-08-06-preclose-v1",
+      "category": "close",
+      "report_date": "2026-08-06",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-06 收盘前报告",
+      "revision": 1,
+      "file": "reports/close/2026-08-06-preclose.pdf"
+    },
+    {
+      "id": "preopen-2026-08-06-preopen-v1",
+      "category": "preopen",
+      "report_date": "2026-08-06",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-06 盘前报告",
+      "revision": 1,
+      "file": "reports/preopen/2026-08-06-preopen.pdf"
+    },
+    {
+      "id": "close-2026-08-05-preclose-v1",
+      "category": "close",
+      "report_date": "2026-08-05",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-05 收盘前报告",
+      "revision": 1,
+      "file": "reports/close/2026-08-05-preclose.pdf"
+    },
+    {
+      "id": "preopen-2026-08-05-preopen-v1",
+      "category": "preopen",
+      "report_date": "2026-08-05",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-05 盘前报告",
+      "revision": 1,
+      "file": "reports/preopen/2026-08-05-preopen.pdf"
+    },
+    {
+      "id": "close-2026-08-04-preclose-v1",
+      "category": "close",
+      "report_date": "2026-08-04",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-04 收盘前报告",
+      "revision": 1,
+      "file": "reports/close/2026-08-04-preclose.pdf"
+    },
+    {
+      "id": "preopen-2026-08-04-preopen-v1",
+      "category": "preopen",
+      "report_date": "2026-08-04",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-04 盘前报告",
+      "revision": 1,
+      "file": "reports/preopen/2026-08-04-preopen.pdf"
+    },
+    {
+      "id": "close-2026-08-03-preclose-v1",
+      "category": "close",
+      "report_date": "2026-08-03",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-03 收盘前报告",
+      "revision": 1,
+      "file": "reports/close/2026-08-03-preclose.pdf"
+    },
+    {
+      "id": "preopen-2026-08-03-preopen-v1",
+      "category": "preopen",
+      "report_date": "2026-08-03",
+      "published_at": "2026-08-09T21:57:02+08:00",
+      "title": "2026-08-03 盘前报告",
+      "revision": 1,
+      "file": "reports/preopen/2026-08-03-preopen.pdf"
     }
   ]
 }
