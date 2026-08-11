@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-08-11T13:50:45+08:00",
+  "generated_at": "2026-08-11T14:37:26+08:00",
   "reports": [
+    {
+      "id": "close-2026-08-11-preclose-v1",
+      "category": "close",
+      "report_date": "2026-08-11",
+      "published_at": "2026-08-11T14:37:26+08:00",
+      "title": "2026-08-11 收盘前报告",
+      "revision": 1,
+      "file": "reports/close/2026-08-11-preclose.pdf",
+      "headline": "整体情绪中性"
+    },
     {
       "id": "preopen-2026-08-11-preopen-v1",
       "category": "preopen",
